@@ -15,3 +15,6 @@ app.get('/', (req, res) =>
 app.listen(PORT, () => 
     console.log(`Your server is running on port ${PORT}`)
 );
+
+mongoose.connect('mongodb://localhost:27017', {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.promise = global.promise;
