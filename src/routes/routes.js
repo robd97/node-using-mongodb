@@ -9,7 +9,7 @@ const routes = (app) => {
         .get(getProducts)
 
         //Post endpoint
-    .post(addnewProduct);
+        .post(addnewProduct);
 
     app.route('/products:ProductID')
         // Get a specific product with ID
