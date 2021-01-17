@@ -4,7 +4,7 @@ import { ProductSchema } from '../models/models';
 const Product = mongoose.model('Product', ProductSchema);
 
 export const addnewProduct = (req, res) => {
-    let newProduct = Product(req.body);
+    let newProduct = new Product(req.body);
 
     newProduct.save((err, Product) => {
         if (err) {
@@ -14,7 +14,7 @@ export const addnewProduct = (req, res) => {
     });
 }
 
-export const getProducts = (req, res) =>{
+export const getProducts = (req, res) => {
     Product.find({}, (err, Product) =>{
         if (err) {
             res.send(err);
@@ -29,5 +29,5 @@ export const getProductWithID = (req, res) => {
             res.send(err);
         }
         res.json(Product);
-    })
+    });
 }
